@@ -2,17 +2,22 @@ $(document).ready(function(){
 
     function cityGo(city){
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=fc68e264d139e3d3a853b82e6c6117e9";
-        console.log(queryURL);
         $("#location-header").text(city);
+
+        var lat = '';
+        var lon = '';
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response){
             console.log(response);
+            lat = response.coord.lat;
+            lon = response.coord.lon;
+        
         });
 
-        var queryUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + "lat" + "&lon=" + "lon" + "&exclude=hourly,minutely,alerts&appid=fc68e264d139e3d3a853b82e6c6117e9";
+        var queryUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely,alerts&appid=fc68e264d139e3d3a853b82e6c6117e9";
     }
 
     function fiveDayGo(city){
