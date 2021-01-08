@@ -29,3 +29,8 @@ form#search button:hover {
     padding: 3px;
 }
 
+img {
+    height: 100px;
+    width: 100px;
+}
+
