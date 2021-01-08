@@ -30,7 +30,16 @@ $(document).ready(function(){
                 method: "GET"
             }).then(function(response){
                 var uvi = response.current.uvi;
-                $("#uv-field").text("UV Index: " + uvi)
+                var uvColor = $("#uv-field");
+                uvColor.text(uvi);
+
+                if (uvi < 3.0){
+                    uvColor.addClass("mild")
+                } else if (uvi >= 3.0 && uvi < 6.0){
+                    uvColor.addClass("moderate")
+                } else if (uvi >= 6.0){
+                    uvColor.addClass("severe")
+                }
 
             });
         });

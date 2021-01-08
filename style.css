@@ -34,3 +34,20 @@ img {
     width: 100px;
 }
 
+.mild{
+    color: white;
+    background-color: lightgreen;
+    border-radius: 5px;
+}
+
+.moderate{
+    color: white;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.severe{
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+}
