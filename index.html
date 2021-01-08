@@ -22,11 +22,13 @@
     <div class="row">
         <div class="card col-3 bg-light ps-4">
            
-            <label for="user-search" class="form-label fw-bold">Search for a City:</label>
-            <form class="search">
-                <input type="text" name="search" id="user-search">
+            <label for="user-search" class="fw-bold">Search for a City:</label>
+            <form id="search">
+                <input type="text" id="user-search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
+
+            <ul id="city-buttons"></ul>
         </div>
         
         <div class="col-8 m-2">
