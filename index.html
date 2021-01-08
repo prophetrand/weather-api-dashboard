@@ -18,27 +18,25 @@
 <body>
   <header>Weather Dashboard For Curious Souls</header>
     
-  <div class="mx-1">
-    <div class="row">
-        <div class="card col-3 bg-light ps-4">
-           
-            <label for="user-search" class="fw-bold">Search for a City:</label>
-            <form id="search">
-                <input type="text" id="user-search">
-                <button type="submit" id="start-search"><i class="fa fa-search"></i></button>
-            </form>
-
-            <ul id="city-buttons"></ul>
-        </div>
+  <div class="mx-1 row">
+    <div class="card col-3 bg-light px-4">
         
-        <div class="col-8 m-2">
-            <div class="card col-12 p-3">
-                <h3 class="fw-bold">"City Name"</h3>
-            </div>
+        <label for="user-search" class="fw-bold">Search for a City:</label>
+        <form id="search">
+            <input type="text" id="user-search">
+            <button type="submit" id="start-search"><i class="fa fa-search"></i></button>
+        </form>
 
-            <div class="mt-2 col-12">
-                "ding dong"
-            </div>
+        <ul id="locations" class="list-group col-6"></ul>
+    </div>
+    
+    <div class="col-8 m-2">
+        <div class="card col-12 p-3">
+            <h3 class="fw-bold">"City Name"</h3>
+        </div>
+
+        <div class="mt-2 col-12">
+            "ding dong"
         </div>
     </div>
   </div>

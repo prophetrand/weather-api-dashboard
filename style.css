@@ -17,3 +17,10 @@ form#search button{
 form#search button:hover {
     background-color: slateblue;
 }
+
+.city-button{
+    background-color: lightgrey;
+    text-align: left;
+    margin: 3px 0px;
+    padding: 3px;
+}
