@@ -51,9 +51,8 @@ $(document).ready(function(){
             url: queryFive,
             method: "GET"
         }).then(function(response){
-            console.log(response);
-
-            $("#day1").prepend(response.list[1].dt_txt);
+            $("#day1").append(response.list[1].dt_txt);
+            $("#day1").append('<img id="day1-icon"/>');
             var iconCode1 = response.list[1].weather[0].icon;
             var weatherIcon1 = $("#day1-icon");
             weatherIcon1.attr("src", "http://openweathermap.org/img/wn/" + iconCode1 + ".png");
@@ -62,7 +61,8 @@ $(document).ready(function(){
             $("#day1").append("Humidity: " + response.list[1].main.humidity);
 
 
-            $("#day2").prepend(response.list[9].dt_txt);
+            $("#day2").append(response.list[9].dt_txt);
+            $("#day2").append('<img id="day2-icon"/>');
             var iconCode2 = response.list[9].weather[0].icon;
             var weatherIcon2 = $("#day2-icon");
             weatherIcon2.attr("src", "http://openweathermap.org/img/wn/" + iconCode2 + ".png");
@@ -70,7 +70,8 @@ $(document).ready(function(){
             $("#day2").append("<br>");
             $("#day2").append("Humidity: " + response.list[9].main.humidity);
 
-            $("#day3").prepend(response.list[17].dt_txt);
+            $("#day3").append(response.list[17].dt_txt);
+            $("#day3").append('<img id="day3-icon"/>');
             var iconCode3 = response.list[17].weather[0].icon;
             var weatherIcon3 = $("#day3-icon");
             weatherIcon3.attr("src", "http://openweathermap.org/img/wn/" + iconCode3 + ".png");
@@ -78,7 +79,8 @@ $(document).ready(function(){
             $("#day3").append("<br>");
             $("#day3").append("Humidity: " + response.list[17].main.humidity);
 
-            $("#day4").prepend(response.list[25].dt_txt);
+            $("#day4").append(response.list[25].dt_txt);
+            $("#day4").append('<img id="day4-icon"/>');
             var iconCode4 = response.list[25].weather[0].icon;
             var weatherIcon4 = $("#day4-icon");
             weatherIcon4.attr("src", "http://openweathermap.org/img/wn/" + iconCode4 + ".png");
@@ -86,7 +88,8 @@ $(document).ready(function(){
             $("#day4").append("<br>");
             $("#day4").append("Humidity: " + response.list[25].main.humidity);
 
-            $("#day5").prepend(response.list[33].dt_txt);
+            $("#day5").append(response.list[33].dt_txt);
+            $("#day5").append('<img id="day5-icon"/>');
             var iconCode5 = response.list[33].weather[0].icon;
             var weatherIcon5 = $("#day5-icon");
             weatherIcon5.attr("src", "http://openweathermap.org/img/wn/" + iconCode5 + ".png");
@@ -98,6 +101,11 @@ $(document).ready(function(){
 
     $("#start-search").on("click", function(event){
         event.preventDefault();
+        $("#day1").empty();
+        $("#day2").empty();
+        $("#day3").empty();
+        $("#day4").empty();
+        $("#day5").empty();
 
         var newLocation = $("#user-search").eq(0).val();
 
@@ -110,6 +118,12 @@ $(document).ready(function(){
     })
 
     $(document).on("click", ".city-button",function(){
+        $("#day1").empty();
+        $("#day2").empty();
+        $("#day3").empty();
+        $("#day4").empty();
+        $("#day5").empty();
+        
         cityGo($(this).text());
         fiveDayGo($(this).text());
     })
