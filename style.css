@@ -6,3 +6,14 @@ header {
     font-size: 30px;
     text-align: center;
 }
+
+form.search button{
+    color: white;
+    background-color: darkslateblue;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+form.search button:hover {
+    background-color: slateblue;
+}
