@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
     padding: 30px 10px;
     background-color: darkslateblue;
@@ -19,8 +23,9 @@ form#search button:hover {
 }
 
 .city-button{
-    background-color: lightgrey;
+    background-color: aliceblue;
     text-align: left;
     margin: 3px 0px;
     padding: 3px;
 }
+

@@ -13,7 +13,8 @@ $(document).ready(function(){
         $("#locations").prepend(newCityButton);
     })
 
-    $(".city-button").on("click", function(){
+    $(document).on("click", ".city-button",function(){
         // this function should populate the weather contents but NOT add a new button like in the #start-search event listener.
+        console.log($(this).text());
     })
 });
