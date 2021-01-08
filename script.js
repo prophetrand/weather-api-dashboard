@@ -11,7 +11,6 @@ $(document).ready(function(){
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log(response);
             lat = response.coord.lat;
             lon = response.coord.lon;
 
@@ -40,7 +39,6 @@ $(document).ready(function(){
                 } else if (uvi >= 6.0){
                     uvColor.addClass("severe")
                 }
-
             });
         });
 
@@ -53,10 +51,51 @@ $(document).ready(function(){
             url: queryFive,
             method: "GET"
         }).then(function(response){
-            
+            console.log(response);
+
+            $("#day1").prepend(response.list[1].dt_txt);
+            var iconCode1 = response.list[1].weather[0].icon;
+            var weatherIcon1 = $("#day1-icon");
+            weatherIcon1.attr("src", "http://openweathermap.org/img/wn/" + iconCode1 + ".png");
+            $("#day1").append("Temp (°F): " + response.list[1].main.temp);
+            $("#day1").append("<br>");
+            $("#day1").append("Humidity: " + response.list[1].main.humidity);
+
+
+            $("#day2").prepend(response.list[1].dt_txt);
+            var iconCode1 = response.list[1].weather[0].icon;
+            var weatherIcon1 = $("#day1-icon");
+            weatherIcon1.attr("src", "http://openweathermap.org/img/wn/" + iconCode1 + ".png");
+            $("#day2").append("Temp (°F): " + response.list[1].main.temp);
+            $("#day2").append("<br>");
+            $("#day2").append("Humidity: " + response.list[1].main.humidity);
+
+            $("#day3").prepend(response.list[1].dt_txt);
+            var iconCode1 = response.list[1].weather[0].icon;
+            var weatherIcon1 = $("#day1-icon");
+            weatherIcon1.attr("src", "http://openweathermap.org/img/wn/" + iconCode1 + ".png");
+            $("#day3").append("Temp (°F): " + response.list[1].main.temp);
+            $("#day3").append("<br>");
+            $("#day3").append("Humidity: " + response.list[1].main.humidity);
+
+            $("#day4").prepend(response.list[1].dt_txt);
+            var iconCode1 = response.list[1].weather[0].icon;
+            var weatherIcon1 = $("#day1-icon");
+            weatherIcon1.attr("src", "http://openweathermap.org/img/wn/" + iconCode1 + ".png");
+            $("#day4").append("Temp (°F): " + response.list[1].main.temp);
+            $("#day4").append("<br>");
+            $("#day4").append("Humidity: " + response.list[1].main.humidity);
+
+            $("#day5").prepend(response.list[1].dt_txt);
+            var iconCode1 = response.list[1].weather[0].icon;
+            var weatherIcon1 = $("#day1-icon");
+            weatherIcon1.attr("src", "http://openweathermap.org/img/wn/" + iconCode1 + ".png");
+            $("#day5").append("Temp (°F): " + response.list[1].main.temp);
+            $("#day5").append("<br>");
+            $("#day5").append("Humidity: " + response.list[1].main.humidity);
         })
     }
-
+// 1, 9, 17, 25, 33
 
 
 
@@ -65,7 +104,6 @@ $(document).ready(function(){
         event.preventDefault();
 
         var newLocation = $("#user-search").eq(0).val();
-        console.log(newLocation);
 
         var newCityButton = $("<button class=\"city-button\">");
         newCityButton.text(newLocation);
@@ -76,7 +114,6 @@ $(document).ready(function(){
     })
 
     $(document).on("click", ".city-button",function(){
-        // this function should populate the weather contents (#main-weather and #five-weather) but NOT add a new button like in the #start-search event listener.
         cityGo($(this).text());
         fiveDayGo($(this).text());
     })

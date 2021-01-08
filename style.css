@@ -29,11 +29,6 @@ form#search button:hover {
     padding: 3px;
 }
 
-img {
-    height: 100px;
-    width: 100px;
-}
-
 .mild {
     color: white;
     background-color: lightgreen;
@@ -56,4 +51,9 @@ img {
     background-color: dodgerblue;
     color: white;
     margin: 10px;
+}
+
+.day-card img {
+    height: 50px;
+    width: 50px;
 }
