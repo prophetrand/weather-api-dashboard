@@ -18,10 +18,23 @@ $(document).ready(function(){
             var iconCode = response.weather[0].icon;
             var weatherIcon = $("#main-icon");
             weatherIcon.attr("src", "http://openweathermap.org/img/wn/" + iconCode + "@2x.png");
-        
+
+            $("#temperature-field").text("Temperature: " + response.main.temp + " °F");
+            $("#humidity-field").text("Humidity: " + response.main.humidity);
+            $("#wind-field").text("Wind: " + response.wind.speed + "MPH");
+
+            var queryUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=fc68e264d139e3d3a853b82e6c6117e9&units=imperial";
+
+            $.ajax({
+                url: queryUV,
+                method: "GET"
+            }).then(function(response){
+                var uvi = response.current.uvi;
+                $("#uv-field").text("UV Index: " + uvi)
+
+            });
         });
 
-        var queryUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=fc68e264d139e3d3a853b82e6c6117e9&units=imperial";
     }
 
     function fiveDayGo(city){
