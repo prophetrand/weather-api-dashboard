@@ -1,22 +1,22 @@
 $(document).ready(function(){
 
     function cityGo(city){
-        var queryURL = "api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=fc68e264d139e3d3a853b82e6c6117e9";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=fc68e264d139e3d3a853b82e6c6117e9";
         console.log(queryURL);
         $("#location-header").text(city);
 
-        $ajax({
+        $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response){
-
+            console.log(response);
         });
 
-        var queryUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely,alerts&appid=fc68e264d139e3d3a853b82e6c6117e9";
+        var queryUV = "https://api.openweathermap.org/data/2.5/onecall?lat=" + "lat" + "&lon=" + "lon" + "&exclude=hourly,minutely,alerts&appid=fc68e264d139e3d3a853b82e6c6117e9";
     }
 
     function fiveDayGo(city){
-        var queryFive = "api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=fc68e264d139e3d3a853b82e6c6117e9";
+        var queryFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=fc68e264d139e3d3a853b82e6c6117e9";
 
     }
 
