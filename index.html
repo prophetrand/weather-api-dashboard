@@ -8,36 +8,50 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
         rel="stylesheet" 
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 
     <title>Weather Dashboard of Champions</title>
 </head>
 
 <body>
-  <header class="bg-secondary bg-gradient">Weather Dashboard For Curious Souls</header>
+  <header>Weather Dashboard For Curious Souls</header>
     
-  <div class>
+  <div class="ms-1">
     <div class="row">
         <div class="card col-3 bg-light ps-4">
-            Search for a City:
+           
+            <label for="user-search" class="form-label fw-bold">Search for a City:</label>
+            <form>
+                <input type="text" name="search" id="user-search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
         
         <div class="col-8 m-2">
             <div class="card col-12 p-3">
-                <h3 class="fw-bold">City Name</h3>
+                <h3 class="fw-bold">"City Name"</h3>
             </div>
 
             <div class="mt-2 col-12">
-                ding dong
+                "ding dong"
             </div>
         </div>
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
-  
-  <script>
+  <script type="text/javascript" src="script.js"></script>
 
-  </script>
 </body>
 </html>
+
+<!-- 
+-The WorkingMovieApp exercise in 06-Server-Side-APIs is apparently a useful parallel to the Weather Dashboard homework.
+-We will very likely need a different API call to access the UV index, as well as one for the 5-day forecast. Both are different from the default Weather API.
+-Weather icons are available in the default Weather API, I think.
+-We will have to define our own thresholds for mild/moderate/severe UV index colors.
+-We will have to store the search history in localstorage. The search history will be composed of buttons that we can click to display the weather data for that location.
+-The exercise 16-all-together in 06-Server-Side-APIs will be useful for creating a form that takes the user input and executes a function on it, while including API usage.
+ -->
