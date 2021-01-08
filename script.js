@@ -49,6 +49,12 @@ $(document).ready(function(){
     function fiveDayGo(city){
         var queryFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&exclude=hourly,minutely,alerts&appid=fc68e264d139e3d3a853b82e6c6117e9&units=imperial";
 
+        $.ajax({
+            url: queryFive,
+            method: "GET"
+        }).then(function(response){
+            
+        })
     }
 
 
